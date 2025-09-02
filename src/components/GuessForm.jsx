@@ -97,7 +97,7 @@ export default function GuessForm({ onSubmit }) {
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Naam gok:
+                    Wat wordt mijn naam?
                 </label>
                 <input
                     type="text"
@@ -110,7 +110,7 @@ export default function GuessForm({ onSubmit }) {
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Gewicht (gram):
+                    Hoeveel ga ik wegen (gram)?
                 </label>
                 <input
                     type="number"
@@ -123,7 +123,7 @@ export default function GuessForm({ onSubmit }) {
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Lengte (cm):
+                    Hoe groot ga ik al zijn (cm)?
                 </label>
                 <input
                     type="number"
@@ -136,7 +136,7 @@ export default function GuessForm({ onSubmit }) {
 
             <div className="mb-6">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Geboortedatum:
+                    Wanneer zal ik er zijn?
                 </label>
                 <input
                     type="date"
