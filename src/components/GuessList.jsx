@@ -10,9 +10,10 @@ export default function GuessList({ refreshKey }) {
 
     async function fetchGuesses() {
         const { data, error } = await supabase
-            .from("guesses")
-            .select("*, users(naam)")
-            .order("created_at", { ascending: false })
+            .from("Guesses")
+            .select("*, Users(Name)")
+            .order("user_id", { ascending: false })
+            .order("created_at", { ascending: true })
 
         if (error) console.error(error)
         else setGuesses(data)
@@ -34,8 +35,8 @@ export default function GuessList({ refreshKey }) {
                 <tbody>
                 {guesses.map((g) => (
                     <tr key={g.id}>
-                        <td className="border p-1">{g.users?.naam}</td>
-                        <td className="border p-1">{g.naam_gok}</td>
+                        <td className="border p-1">{g.Users?.Name}</td>
+                        <td className="border p-1">{g.naam}</td>
                         <td className="border p-1">{g.gewicht} g</td>
                         <td className="border p-1">{g.lengte} cm</td>
                         <td className="border p-1">{g.geboortedatum}</td>

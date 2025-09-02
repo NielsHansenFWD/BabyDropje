@@ -15,7 +15,7 @@ export default function GuessForm({ onSubmit }) {
     }, [])
 
     async function fetchUsers() {
-        const { data, error } = await supabase.from("users").select("*")
+        const { data, error } = await supabase.from("Users").select("*")
         if (error) console.error(error)
         else setUsers(data)
     }
@@ -28,8 +28,8 @@ export default function GuessForm({ onSubmit }) {
         // Als nieuwe gebruiker ingevuld is, eerst aanmaken
         if (newUser.trim()) {
             const { data, error } = await supabase
-                .from("users")
-                .insert({ naam: newUser })
+                .from("Users")
+                .insert({ Name: newUser })
                 .select()
             if (error) {
                 console.error(error)
@@ -41,9 +41,9 @@ export default function GuessForm({ onSubmit }) {
         }
 
         // Voeg gok toe
-        const { error } = await supabase.from("guesses").insert({
+        const { error } = await supabase.from("Guesses").insert({
             user_id: selectedUserId,
-            naam_gok: naamGok,
+            naam: naamGok,
             gewicht: parseInt(gewicht),
             lengte: parseInt(lengte),
             geboortedatum,
@@ -62,81 +62,96 @@ export default function GuessForm({ onSubmit }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="p-4 border rounded">
-            <h2 className="font-bold text-lg mb-2">Nieuwe gok</h2>
+        <form onSubmit={handleSubmit} className="p-6 bg-white rounded-xl shadow-md max-w-md mx-auto">
+            <h2 className="font-bold text-2xl mb-4 text-gray-800">Nieuwe gok</h2>
 
-            <label className="block mb-2">
-                Kies bestaande deelnemer:
+            <div className="mb-4">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Kies bestaande deelnemer:
+                </label>
                 <select
                     value={userId}
                     onChange={(e) => setUserId(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 >
                     <option value="">-- kies --</option>
                     {users.map((u) => (
                         <option key={u.id} value={u.id}>
-                            {u.naam}
+                            {u.Name}
                         </option>
                     ))}
                 </select>
-            </label>
+            </div>
 
-            <label className="block mb-2">
-                Of nieuwe deelnemer:
+            <div className="mb-4">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Of nieuwe deelnemer:
+                </label>
                 <input
                     type="text"
                     value={newUser}
                     onChange={(e) => setNewUser(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
-            </label>
+            </div>
 
-            <label className="block mb-2">
-                Naam gok:
+            <div className="mb-4">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Naam gok:
+                </label>
                 <input
                     type="text"
                     value={naamGok}
                     onChange={(e) => setNaamGok(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required
                 />
-            </label>
+            </div>
 
-            <label className="block mb-2">
-                Gewicht (gram):
+            <div className="mb-4">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Gewicht (gram):
+                </label>
                 <input
                     type="number"
                     value={gewicht}
                     onChange={(e) => setGewicht(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required
                 />
-            </label>
+            </div>
 
-            <label className="block mb-2">
-                Lengte (cm):
+            <div className="mb-4">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Lengte (cm):
+                </label>
                 <input
                     type="number"
                     value={lengte}
                     onChange={(e) => setLengte(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required
                 />
-            </label>
+            </div>
 
-            <label className="block mb-2">
-                Geboortedatum:
+            <div className="mb-6">
+                <label className="block text-gray-700 mb-1 font-medium">
+                    Geboortedatum:
+                </label>
                 <input
                     type="date"
                     value={geboortedatum}
                     onChange={(e) => setGeboortedatum(e.target.value)}
-                    className="block w-full border p-1"
+                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
                     required
                 />
-            </label>
+            </div>
 
-            <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-                Opslaan
+            <button
+                type="submit"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-150"
+            >
+                Verzenden
             </button>
         </form>
     )
