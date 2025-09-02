@@ -29,7 +29,7 @@ export default function GuessForm({ onSubmit }) {
         if (newUser.trim()) {
             const { data, error } = await supabase
                 .from("Users")
-                .insert({ naam: newUser })
+                .insert({ Name: newUser })
                 .select()
             if (error) {
                 console.error(error)
@@ -41,9 +41,9 @@ export default function GuessForm({ onSubmit }) {
         }
 
         // Voeg gok toe
-        const { error } = await supabase.from("guesses").insert({
+        const { error } = await supabase.from("Guesses").insert({
             user_id: selectedUserId,
-            naam_gok: naamGok,
+            naam: naamGok,
             gewicht: parseInt(gewicht),
             lengte: parseInt(lengte),
             geboortedatum,
@@ -75,7 +75,7 @@ export default function GuessForm({ onSubmit }) {
                     <option value="">-- kies --</option>
                     {users.map((u) => (
                         <option key={u.id} value={u.id}>
-                            {u.naam}
+                            {u.Name}
                         </option>
                     ))}
                 </select>
