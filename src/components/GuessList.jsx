@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { supabase } from "../supabaseClient"
+import { supabase } from "../SupabaseClient.jsx"
 
 export default function GuessList({ refreshKey }) {
     const [guesses, setGuesses] = useState([])
