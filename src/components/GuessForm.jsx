@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { supabase } from "../supabaseClient"
+import { supabase } from "../SupabaseClient"
 
 export default function GuessForm({ onSubmit }) {
     const [users, setUsers] = useState([])
