@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../SupabaseClient"
+import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom" // if using react-router
 
 export default function GuessForm({ onSubmit }) {
     const [users, setUsers] = useState([])
@@ -11,6 +13,8 @@ export default function GuessForm({ onSubmit }) {
     const [geboortedatum, setGeboortedatum] = useState("")
     const [gewichtError, setGewichtError] = useState("")
     const [lengteError, setLengteError] = useState("")
+    const [showModal, setShowModal] = useState(false)
+    const navigate = useNavigate() // if using react-router
 
     function handleLengteChange(e) {
         const value = e.target.value
@@ -89,8 +93,14 @@ export default function GuessForm({ onSubmit }) {
             setGewicht("")
             setLengte("")
             setGeboortedatum("")
+            setShowModal(true) // Show modal
             if (onSubmit) onSubmit()
         }
+    }
+
+    function handleModalOk() {
+        setShowModal(false)
+        navigate("/") // Redirect to homepage
     }
 
     return (
@@ -201,6 +211,19 @@ export default function GuessForm({ onSubmit }) {
             >
                 Drop-je gokje hier!
             </button>
+            {showModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+                    <div className="bg-white rounded-xl shadow-lg p-8 max-w-sm w-full text-center">
+                        <h3 className="text-xl font-semibold mb-4 text-green-700">Bedankt voor je gokje!</h3>
+                        <button
+                            onClick={handleModalOk}
+                            className="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
+                        >
+                            Ok
+                        </button>
+                    </div>
+                </div>
+            )}
         </form>
     )
 }
