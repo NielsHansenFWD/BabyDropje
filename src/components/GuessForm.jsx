@@ -9,6 +9,17 @@ export default function GuessForm({ onSubmit }) {
     const [gewicht, setGewicht] = useState("")
     const [lengte, setLengte] = useState("")
     const [geboortedatum, setGeboortedatum] = useState("")
+    const [gewichtError, setGewichtError] = useState("")
+
+    function handleGewichtChange(e) {
+        const value = e.target.value
+        setGewicht(value)
+        if (!/^\d{0,4}$/.test(value)) {
+            setGewichtError("Voer exact 4 cijfers in, zonder komma.")
+        } else {
+            setGewichtError("")
+        }
+    }
 
     useEffect(() => {
         fetchUsers()
@@ -38,6 +49,11 @@ export default function GuessForm({ onSubmit }) {
             selectedUserId = data[0].id
             setUsers([...users, data[0]])
             setUserId(data[0].id)
+        }
+
+        if (!/^\d{4}$/.test(gewicht)) {
+            setGewichtError("Voer exact 4 cijfers in, zonder komma.")
+            return
         }
 
         // Voeg gok toe
@@ -83,17 +99,19 @@ export default function GuessForm({ onSubmit }) {
                 </select>
             </div>
 
-            <div className="mb-4">
-                <label className="block text-gray-700 mb-1 font-medium">
-                    Of nieuwe deelnemer:
-                </label>
-                <input
-                    type="text"
-                    value={newUser}
-                    onChange={(e) => setNewUser(e.target.value)}
-                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-                />
-            </div>
+            {!userId && (
+                <div className="mb-4">
+                    <label className="block text-gray-700 mb-1 font-medium">
+                        Of nieuwe deelnemer:
+                    </label>
+                    <input
+                        type="text"
+                        value={newUser}
+                        onChange={(e) => setNewUser(e.target.value)}
+                        className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                </div>
+            )}
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
