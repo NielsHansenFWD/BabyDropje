@@ -63,11 +63,11 @@ export default function GuessForm({ onSubmit }) {
 
     return (
         <form onSubmit={handleSubmit} className="p-6 bg-white rounded-xl shadow-md max-w-md mx-auto">
-            <h2 className="font-bold text-2xl mb-4 text-gray-800">Nieuwe gok</h2>
+            <h2 className="font-bold text-2xl mb-4 text-gray-800">Nieuw gokje</h2>
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Kies bestaande deelnemer:
+                    Ik ben:
                 </label>
                 <select
                     value={userId}
@@ -97,7 +97,7 @@ export default function GuessForm({ onSubmit }) {
 
             <div className="mb-4">
                 <label className="block text-gray-700 mb-1 font-medium">
-                    Wat wordt mijn naam?
+                    Hoe ga ik heten?
                 </label>
                 <input
                     type="text"
@@ -151,7 +151,7 @@ export default function GuessForm({ onSubmit }) {
                 type="submit"
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-150"
             >
-                Verzenden
+                Drop-je gokje hier!
             </button>
         </form>
     )

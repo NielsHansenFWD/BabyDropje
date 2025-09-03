@@ -20,30 +20,35 @@ export default function GuessList({ refreshKey }) {
     }
 
     return (
-        <div className="mt-4">
-            <h2 className="font-bold text-lg mb-2">Alle gokjes</h2>
-            <table className="border-collapse border w-full">
-                <thead>
-                <tr>
-                    <th className="border p-1">Deelnemer</th>
-                    <th className="border p-1">Naam gok</th>
-                    <th className="border p-1">Gewicht</th>
-                    <th className="border p-1">Lengte</th>
-                    <th className="border p-1">Geboortedatum</th>
-                </tr>
-                </thead>
-                <tbody>
-                {guesses.map((g) => (
-                    <tr key={g.id}>
-                        <td className="border p-1">{g.Users?.Name}</td>
-                        <td className="border p-1">{g.naam}</td>
-                        <td className="border p-1">{g.gewicht} g</td>
-                        <td className="border p-1">{g.lengte} cm</td>
-                        <td className="border p-1">{g.geboortedatum}</td>
+        <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <h2 className="font-bold text-xl mb-4 text-gray-800">Alle gokjes</h2>
+            <div className="overflow-x-auto">
+                <table className="border-collapse w-full text-sm">
+                    <thead>
+                    <tr className="bg-gray-100">
+                        <th className="border-b p-2 font-semibold text-left">Deelnemer</th>
+                        <th className="border-b p-2 font-semibold text-left">Naam gok</th>
+                        <th className="border-b p-2 font-semibold text-left">Gewicht</th>
+                        <th className="border-b p-2 font-semibold text-left">Lengte</th>
+                        <th className="border-b p-2 font-semibold text-left">Geboortedatum</th>
                     </tr>
-                ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                    {guesses.map((g, i) => (
+                        <tr
+                            key={g.id}
+                            className={i % 2 === 0 ? "bg-gray-50 hover:bg-gray-100" : "bg-white hover:bg-gray-100"}
+                        >
+                            <td className="p-2">{g.Users?.Name}</td>
+                            <td className="p-2">{g.naam}</td>
+                            <td className="p-2">{g.gewicht} g</td>
+                            <td className="p-2">{g.lengte} cm</td>
+                            <td className="p-2">{g.geboortedatum}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
