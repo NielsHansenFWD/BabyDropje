@@ -10,6 +10,17 @@ export default function GuessForm({ onSubmit }) {
     const [lengte, setLengte] = useState("")
     const [geboortedatum, setGeboortedatum] = useState("")
     const [gewichtError, setGewichtError] = useState("")
+    const [lengteError, setLengteError] = useState("")
+
+    function handleLengteChange(e) {
+        const value = e.target.value
+        setLengte(value)
+        if (!/^\d{0,2}$/.test(value)) {
+            setLengteError("Voer exact 2 cijfers in, zonder komma.")
+        } else {
+            setLengteError("")
+        }
+    }
 
     function handleGewichtChange(e) {
         const value = e.target.value
@@ -35,6 +46,11 @@ export default function GuessForm({ onSubmit }) {
         e.preventDefault()
 
         let selectedUserId = userId
+
+        if (!/^\d{2}$/.test(lengte)) {
+            setLengteError("Voer exact 2 cijfers in, zonder komma.")
+            return
+        }
 
         if (!/^\d{4}$/.test(gewicht)) {
             setGewichtError("Voer exact 4 cijfers in, zonder komma.")
@@ -154,10 +170,18 @@ export default function GuessForm({ onSubmit }) {
                 <input
                     type="number"
                     value={lengte}
-                    onChange={(e) => setLengte(e.target.value)}
-                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    onChange={handleLengteChange}
+                    className={`block w-full border ${lengteError ? "border-red-500" : "border-gray-300"} rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400`}
                     required
+                    min="0"
+                    max="99"
+                    step="1"
+                    inputMode="numeric"
+                    pattern="\d{2}"
                 />
+                {lengteError && (
+                    <p className="text-red-600 text-sm mt-1">{lengteError}</p>
+                )}
             </div>
 
             <div className="mb-6">
