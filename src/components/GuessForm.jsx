@@ -36,6 +36,11 @@ export default function GuessForm({ onSubmit }) {
 
         let selectedUserId = userId
 
+        if (!/^\d{4}$/.test(gewicht)) {
+            setGewichtError("Voer exact 4 cijfers in, zonder komma.")
+            return
+        }
+
         // Als nieuwe gebruiker ingevuld is, eerst aanmaken
         if (newUser.trim()) {
             const { data, error } = await supabase
@@ -49,11 +54,6 @@ export default function GuessForm({ onSubmit }) {
             selectedUserId = data[0].id
             setUsers([...users, data[0]])
             setUserId(data[0].id)
-        }
-
-        if (!/^\d{4}$/.test(gewicht)) {
-            setGewichtError("Voer exact 4 cijfers in, zonder komma.")
-            return
         }
 
         // Voeg gok toe
@@ -133,10 +133,18 @@ export default function GuessForm({ onSubmit }) {
                 <input
                     type="number"
                     value={gewicht}
-                    onChange={(e) => setGewicht(e.target.value)}
-                    className="block w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    onChange={handleGewichtChange}
+                    className={`block w-full border ${gewichtError ? "border-red-500" : "border-gray-300"} rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400`}
                     required
+                    min="0"
+                    max="9999"
+                    step="1"
+                    inputMode="numeric"
+                    pattern="\d{4}"
                 />
+                {gewichtError && (
+                    <p className="text-red-600 text-sm mt-1">{gewichtError}</p>
+                )}
             </div>
 
             <div className="mb-4">
