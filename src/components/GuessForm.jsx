@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../SupabaseClient"
-import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom" // if using react-router
 
 export default function GuessForm({ onSubmit }) {
