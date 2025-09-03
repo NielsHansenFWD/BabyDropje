@@ -168,16 +168,14 @@ export default function GuessForm({ onSubmit }) {
                     Hoe groot ga ik al zijn (cm)?
                 </label>
                 <input
-                    type="number"
+                    type="text"
                     value={lengte}
                     onChange={handleLengteChange}
                     className={`block w-full border ${lengteError ? "border-red-500" : "border-gray-300"} rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-400`}
                     required
-                    min="0"
-                    max="99"
-                    step="1"
                     inputMode="numeric"
                     pattern="\d{2}"
+                    maxLength={2}
                 />
                 {lengteError && (
                     <p className="text-red-600 text-sm mt-1">{lengteError}</p>
