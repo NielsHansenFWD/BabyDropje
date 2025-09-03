@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { supabase } from "../SupabaseClient"
-import { useNavigate } from "react-router-dom" // if using react-router
 
 export default function GuessForm({ onSubmit }) {
     const [users, setUsers] = useState([])
@@ -13,7 +12,6 @@ export default function GuessForm({ onSubmit }) {
     const [gewichtError, setGewichtError] = useState("")
     const [lengteError, setLengteError] = useState("")
     const [showModal, setShowModal] = useState(false)
-    const navigate = useNavigate() // if using react-router
 
     function handleLengteChange(e) {
         const value = e.target.value
@@ -99,7 +97,7 @@ export default function GuessForm({ onSubmit }) {
 
     function handleModalOk() {
         setShowModal(false)
-        navigate("/") // Redirect to homepage
+        window.location.href = "/"// Redirect to homepage
     }
 
     return (
