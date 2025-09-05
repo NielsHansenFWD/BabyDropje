@@ -70,12 +70,14 @@ export default function GuessList({ refreshKey }) {
                     </tr>
                     </thead>
                     <tbody>
-                    {Object.entries(counts).map(([name, count]) => (
-                        <tr key={name} className="bg-white hover:bg-gray-100">
-                            <td className="p-2">{name}</td>
-                            <td className="p-2">{count}</td>
-                        </tr>
-                    ))}
+                    {Object.entries(counts)
+                        .sort((a, b) => b[1] - a[1])
+                        .map(([name, count]) => (
+                            <tr key={name} className="bg-white hover:bg-gray-100">
+                                <td className="p-2">{name}</td>
+                                <td className="p-2">{count}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
