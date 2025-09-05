@@ -18,6 +18,12 @@ export default function GuessList({ refreshKey }) {
         if (error) console.error(error)
         else setGuesses(data)
     }
+
+    const counts = {}
+    guesses.forEach(g => {
+        const name = g.Users?.Name || "Onbekend"
+        counts[name] = (counts[name] || 0) + 1
+    })
 /*
     return (
         <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
@@ -53,8 +59,26 @@ export default function GuessList({ refreshKey }) {
     ) */
 
     return (
-        <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 text-center">
-            <h2 className="font-bold text-xl mb-4 text-gray-800">Aantal gokjes: {guesses.length}</h2>
+        <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <h2 className="font-bold text-xl mb-4 text-gray-800">Aantal gokjes per deelnemer</h2>
+            <div className="overflow-x-auto">
+                <table className="border-collapse w-full text-sm">
+                    <thead>
+                    <tr className="bg-gray-100">
+                        <th className="border-b p-2 font-semibold text-left">Deelnemer</th>
+                        <th className="border-b p-2 font-semibold text-left">Aantal gokjes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {Object.entries(counts).map(([name, count]) => (
+                        <tr key={name} className="bg-white hover:bg-gray-100">
+                            <td className="p-2">{name}</td>
+                            <td className="p-2">{count}</td>
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
