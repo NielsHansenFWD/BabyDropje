@@ -18,7 +18,7 @@ export default function GuessList({ refreshKey }) {
         if (error) console.error(error)
         else setGuesses(data)
     }
-
+/*
     return (
         <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
             <h2 className="font-bold text-xl mb-4 text-gray-800">Alle gokjes</h2>
@@ -49,6 +49,12 @@ export default function GuessList({ refreshKey }) {
                     </tbody>
                 </table>
             </div>
+        </div>
+    ) */
+
+    return (
+        <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6 text-center">
+            <h2 className="font-bold text-xl mb-4 text-gray-800">Aantal gokjes: {guesses.length}</h2>
         </div>
     )
 }
