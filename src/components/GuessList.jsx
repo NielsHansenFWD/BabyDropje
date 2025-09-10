@@ -3,6 +3,7 @@ import { supabase } from "../SupabaseClient.jsx"
 
 export default function GuessList({ refreshKey }) {
     const [guesses, setGuesses] = useState([])
+    const [secret, setSecret] = useState("")
 
     useEffect(() => {
         fetchGuesses()
