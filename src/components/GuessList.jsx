@@ -61,8 +61,15 @@ export default function GuessList({ refreshKey }) {
 
     return (
         <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
+            <input
+                type="text"
+                value={secret}
+                onChange={e => setSecret(e.target.value)}
+                placeholder="Voer geheime code in"
+                className="mb-4 px-3 py-2 border rounded w-full"
+            />
             <h2 className="font-bold text-xl mb-4 text-gray-800">Aantal gokjes per deelnemer</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mb-8">
                 <table className="border-collapse w-full text-sm">
                     <thead>
                     <tr className="bg-gray-100">
@@ -82,18 +89,6 @@ export default function GuessList({ refreshKey }) {
                     </tbody>
                 </table>
             </div>
-        </div>
-    )
-
-    return (
-        <div className="mt-8 max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-6">
-            <input
-                type="text"
-                value={secret}
-                onChange={e => setSecret(e.target.value)}
-                placeholder="Voer geheime code in"
-                className="mb-4 px-3 py-2 border rounded w-full"
-            />
             {secret === "dropje26" && (
                 <div>
                     <h2 className="font-bold text-xl mb-4 text-gray-800">Alle gokjes</h2>
