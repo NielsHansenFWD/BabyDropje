@@ -1,0 +1,268 @@
+Index: .idea/BabyDropjeProject.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/BabyDropjeProject.iml b/.idea/BabyDropjeProject.iml
+--- a/.idea/BabyDropjeProject.iml	(revision 55faa8587a472cc6e3f3938c2db50a5a789cc177)
++++ b/.idea/BabyDropjeProject.iml	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
+@@ -9,4 +9,4 @@
+     <orderEntry type="inheritedJdk" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+-</module>
+\ No newline at end of file
++</module>
+Index: .idea/material_theme_project_new.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/material_theme_project_new.xml b/.idea/material_theme_project_new.xml
+--- a/.idea/material_theme_project_new.xml	(revision 55faa8587a472cc6e3f3938c2db50a5a789cc177)
++++ b/.idea/material_theme_project_new.xml	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
+@@ -10,4 +10,4 @@
+       </MTProjectMetadataState>
+     </option>
+   </component>
+-</project>
+\ No newline at end of file
++</project>
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+--- a/.idea/modules.xml	(revision 55faa8587a472cc6e3f3938c2db50a5a789cc177)
++++ b/.idea/modules.xml	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
+@@ -5,4 +5,4 @@
+       <module fileurl="file://$PROJECT_DIR$/.idea/BabyDropjeProject.iml" filepath="$PROJECT_DIR$/.idea/BabyDropjeProject.iml" />
+     </modules>
+   </component>
+-</project>
+\ No newline at end of file
++</project>
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+--- a/.idea/vcs.xml	(revision 55faa8587a472cc6e3f3938c2db50a5a789cc177)
++++ b/.idea/vcs.xml	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
+@@ -3,4 +3,4 @@
+   <component name="VcsDirectoryMappings">
+     <mapping directory="" vcs="Git" />
+   </component>
+-</project>
+\ No newline at end of file
++</project>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
++++ b/.idea/workspace.xml	(revision 55f84f7a77c906d1f66889237bf8a4b5a88e667d)
+@@ -0,0 +1,197 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
++  <component name="ChangeListManager">
++    <list default="true" id="37bfaeba-2d92-4fb1-8085-9fcb2e1f89a8" name="Changes" comment="CSS added">
++      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/eslint.config.js" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/public/vite.svg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/main.jsx" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/vite.config.js" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="FileTemplateManagerImpl">
++    <option name="RECENT_TEMPLATES">
++      <list>
++        <option value="HTML File" />
++      </list>
++    </option>
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;NielsHansenFWD&quot;
++  }
++}</component>
++  <component name="GithubPullRequestsUISettings">{
++  &quot;selectedUrlAndAccountId&quot;: {
++    &quot;url&quot;: &quot;https://github.com/NielsHansenFWD/BabyDropje.git&quot;,
++    &quot;accountId&quot;: &quot;ff0f0cfc-77b0-481c-aef5-6601d0735f55&quot;
++  }
++}</component>
++  <component name="IlluminatedCloudWorkspaceSettings">
++    <option name="projectWorkspaceSettings">
++      <ProjectWorkspaceSettings>
++        <option name="anonymousApexSettings">
++          <AnonymousApexSettings>
++            <option name="savedDocuments">
++              <list>
++                <AnonymousApexSavedDocument>
++                  <option name="name" value="Anonymous Apex 1" />
++                </AnonymousApexSavedDocument>
++              </list>
++            </option>
++          </AnonymousApexSettings>
++        </option>
++      </ProjectWorkspaceSettings>
++    </option>
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 1
++}</component>
++  <component name="ProjectId" id="329kHGqImPzTWggHgbJ3O8FsOun" />
++  <component name="ProjectViewState">
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++    <option name="showMembers" value="true" />
++  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;ts.external.directory.path&quot;: &quot;/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
++  }
++}</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/src" />
++    </key>
++  </component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-WS-251.26094.131" />
++      </set>
++    </attachedChunks>
++  </component>
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="37bfaeba-2d92-4fb1-8085-9fcb2e1f89a8" name="Changes" comment="" />
++      <created>1756840085871</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1756840085871</updated>
++      <workItem from="1756840087027" duration="5292000" />
++      <workItem from="1756845489325" duration="2210000" />
++    </task>
++    <task id="LOCAL-00001" summary="First commit">
++      <option name="closed" value="true" />
++      <created>1756840219238</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1756840219238</updated>
++    </task>
++    <task id="LOCAL-00002" summary="Supabase setup">
++      <option name="closed" value="true" />
++      <created>1756841057889</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1756841057889</updated>
++    </task>
++    <task id="LOCAL-00003" summary="frontend base">
++      <option name="closed" value="true" />
++      <created>1756841141339</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1756841141339</updated>
++    </task>
++    <task id="LOCAL-00004" summary="package.json">
++      <option name="closed" value="true" />
++      <created>1756841224052</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1756841224052</updated>
++    </task>
++    <task id="LOCAL-00005" summary="working">
++      <option name="closed" value="true" />
++      <created>1756842488874</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1756842488874</updated>
++    </task>
++    <task id="LOCAL-00006" summary="typo's">
++      <option name="closed" value="true" />
++      <created>1756842932312</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1756842932312</updated>
++    </task>
++    <task id="LOCAL-00007" summary="DB Functionality working">
++      <option name="closed" value="true" />
++      <created>1756844505816</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1756844505816</updated>
++    </task>
++    <task id="LOCAL-00008" summary="Rework">
++      <option name="closed" value="true" />
++      <created>1756845574025</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1756845574025</updated>
++    </task>
++    <task id="LOCAL-00009" summary="CSS added">
++      <option name="closed" value="true" />
++      <created>1756847260833</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1756847260833</updated>
++    </task>
++    <option name="localTasksCounter" value="10" />
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="First commit" />
++    <MESSAGE value="Supabase setup" />
++    <MESSAGE value="frontend base" />
++    <MESSAGE value="package.json" />
++    <MESSAGE value="working" />
++    <MESSAGE value="typo's" />
++    <MESSAGE value="DB Functionality working" />
++    <MESSAGE value="Rework" />
++    <MESSAGE value="CSS added" />
++    <option name="LAST_COMMIT_MESSAGE" value="CSS added" />
++  </component>
++</project>
+\ No newline at end of file
