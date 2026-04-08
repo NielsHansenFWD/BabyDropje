@@ -67,7 +67,7 @@ export default function RankingList() {
     return (
         <div className="mt-8 max-w-4xl mx-auto w-full px-4">
             {/* Header */}
-            <div className="bg-gradient-to-r from-pink-400 to-purple-400 rounded-xl p-6 mb-6 text-white text-center shadow-lg">
+            <div className="bg-gradient-to-r from-blue-500 via-orange-400 to-yellow-400 rounded-xl p-6 mb-6 text-white text-center shadow-lg">
                 <div className="text-4xl mb-2">🍼</div>
                 <h2 className="text-3xl font-bold">Achiel is geboren! 🎉</h2>
                 <p className="mt-1 opacity-90 text-sm">26 januari 2026 · 4125 g · 52 cm</p>
